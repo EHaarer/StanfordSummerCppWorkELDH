@@ -1,0 +1,9 @@
+While we were working on wordladder.cpp, we found an error when we were taking in inputs for the beggining and end of Word Ladder
+and storing them into the variables startWord and endWord. Though the program worked when we entered the words for the first ladder,
+when we tried to enter in a second pair of words, startWord would change, but endWord wouldn't change, leading to the strange scenario
+where it would make a ladder between incorrect words.This error occurred as a result of earlier code using a break statement to exit
+a while loop and create the word ladder, which would lead to one word being assigned but the other being bypassed.To fix this code,
+as well as clean it up a bit, we rewrote the input into a function that returns a boolean instead of relying on a break statement, 
+and it is much cleaner and more concise. This function is a much better system as instead of determining if there was an error
+after the words were inputted by calling a seperate function while in the while loop, we combined it into one function so we removed
+the necessity for the while loop and break statements that caused the error earlier, thus resolving the logic error.
