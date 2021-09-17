@@ -1,0 +1,12 @@
+While we were working on our code for the grammer generator, we found an unusual error while we were running our code.
+The program would open as usual, and we could input our grammar file and symbol and the program worked just fine, but after
+we inputted the number of instances of a certain grammar type, a large red flash of error text would pop up for a second,
+then the program would crash entirely, and this wouldn't give us enough time to actually read the error message. Seeing as
+This error message was our most pertinent clue as to what was causing the program to crash, so to get a copy of it to read
+before the window closed, we used the snip tool on windows and some lucky timing to screenshot the screen. Once we were 
+actually able to read the error message, it referenced us to two of our functions: the findGrammarBranch() function and 
+the pickRandomElement() function. We then combed over these functions, and we finally found the error: an index out of
+bounds error when trying to access a random value of the Vector. What we assumed was that the getRandomInteger() function
+was exclusive, but after refering to the documentation, we found that it was inclusive, so we had to subtract the max
+value for this function, the size of the vector, by 1 so that it was within bounds, and then we ran our code and it
+worked as intended.
